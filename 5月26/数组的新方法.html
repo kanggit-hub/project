@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Array 的静态方法:(直接设置给构造函数的属性和方法都成作为静态方法)
+
+        // Array.from 把类数组转换为数组格式
+
+        //     类属组是下标由0开始自然递增
+        //     拥有length属性
+
+        // Array.isArray
+        //   判断当前类型是否为数组
+        // Array.of
+        //   创建一个新数组,修复new Array()的问题
+
+        // 数组的新方法
+        //  reduce两个参数
+        //   参数 1 回调函数
+        //   初始值或上一次回调函数的返回值
+        //   当前的值
+        //   当前值的下标
+        //   原数组的引用
+
+
+        // 参数2 累加的初始值
+        //  如果没有初始值,则进入reduce的是数组的第一个和第二个值
+        // reduce的返回值就是最后累加的值
+
+        const arr = [1, 2, 3, 4];
+        const re = arr.reduce((prev, item, index, arr) => {
+            console.log();
+            return item + prev
+        }, 0)
+        console.log(re);
+
+
+
+        // 数组的新方法：
+        // reduce：遍历累加
+        // reduce两个参数
+        // 参数1：回调函数
+        // 参数1：初始值或者上一次回调函数返回的值
+        // 参数2：当前的值
+        // 参数3：当前值的下标
+        // 参数3：原数组的引用
+        // 参数2：累加的初始值
+        // 如果没有给初始值，则进入reduce的是数组的第一个和第二个值
+        // reduce的返回值就是最后累加的值
+
+
+
+
+        {
+            const arr = [1, 2, 3, 4, 5];
+            const re = arr.reduce((prev, item, index, arr) => {
+                console.log(prev, item, index, arr);
+                return item + prev;
+            }, 0);
+
+            console.log(re);
+        }
+
+
+        {
+            const str = "http://www.baidu.com?name=laozhang&age=18&sex=nv";
+            const re = str.split("?")[1].split("&").reduce((prev, item) => {
+                const [key, value] = item.split("=");
+                prev[key] = value;
+                return prev;
+            }, {});
+            console.log(re);
+        }
+
+
+        {
+            /* const str = "abaacddebcdberfder";
+            const o = {
+
+            };
+            for (let value of str) {
+                if (o[value]) {
+                    o[value]++;
+                } else {
+                    o[value] = 1;
+                }
+            }
+            console.log(o); */
+
+
+
+            const str = "abaacdde";
+            const re = str.split("").reduce((p, i) => {
+                p[i] ? p[i]++ : p[i] = 1;
+                return p;
+            }, {})
+            console.log(re);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // 对象可以通过rest参数解构赋值剩余内容
+        const obj = {
+            name:"laowang",
+            age :19,
+            sex:"nv",
+            score:100
+        }
+        const{
+          ...rest
+        } = obj;
+        console.log(rest);
+
+        // Object静态方法keys values entries 是可以拿到某个对象的 键 值 键值对
+        // 然后可以通过数组方法遍历对象
+
+        for (let key of Object.keys(obj)){
+             let a=  [key +" "+ obj[key]].join()
+            console.log(a.split(" "));
+        }
+    </script>
+    
+</body>
+</html>

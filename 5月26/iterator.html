@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     一种数据结构只要部署了Iterator 接口, 我们称这种数据结构是可以迭代的
+        //     在Es6中, 只要一种数据结构具有了Symbol.iterator属性, 那么就认为是可以迭代的
+        //     在ES6 很多数据都部署了iterator接口(Array, set, Map, string)
+        //     结构赋值的时候默认调用iterator接口
+        //     扩展运算符使用的时候默认调用iterator接口
+        //     for of 使用的iterator接口
+        //    对象没有部署iterator接口
+
+        // 模拟给数据手动部署一个iterator 
+
+        let arr = [1,2,3]
+         function myIterator(arr) {
+            let index = 0;
+            return {
+                next: function () {
+                    if (index < arr.length) {
+                        return {
+                            value: arr[index++],
+                            done: false,
+                          
+                        }
+                    } else {
+                        return {
+                            value: undefined,
+                            done: true
+                        }
+                    }
+                }
+            }
+        }
+         var re = myIterator(arr)
+         console.log(re);
+         console.log(re.next());
+         console.log(re.next());
+         console.log(re.next());
+         console.log(re.next());
+
+    </script>
+
+
+
+</body>
+
+</html>

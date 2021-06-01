@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4]
+        const obj = {
+            name:"obj",
+            age:19,
+            do:{
+                eat:"chi"
+            }
+        }
+
+        // for of 遍历:
+        // for in 拿到的只是key 而 for of 拿到的是value
+        // 有的伪类数组也部署了iterator(arguments,nodeList)
+        for (const value of Object.keys(obj)) {
+            
+            console.log(value);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 箭头函数的特点
+        //   箭头函数没有this
+        // 箭头函数不能用于构造函数,也就是不能使用new关键字调用
+        // 箭头函数没有arguments对象
+        // 箭头函数不能使用yield命令,意味着不能当作generator
+        // 1 函数体是多条语句的时候
+        // function fn(){
+        //     let a = 1;
+        //     console.log(a);
+        // }
+        // fn()
+
+        // const fn = () => {
+        //     let a = 1
+        //     console.log(a);
+        // }
+        // fn()
+
+        //  2 当函数是一条语句 且是一条return语句的时候,可以省略
+        // function fn1(a,b) {
+        //     return (a + b)
+        // }
+        //  var a = fn1(10,10)
+        //  console.log(a);
+
+
+        //  const fn1 = (a,b) =>a+b
+        //   let a = fn1(1,12)
+        //   console.log(a);
+
+
+        const add = (...rest) =>{
+            let sum = 0;
+            rest.forEach(item => sum += item);
+            console.log(sum);
+        }
+
+        add(1, 2, 3, 4)
+    </script>
+</body>
+
+</html>

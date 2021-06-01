@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6 引用rest参数(形式为...变量名),用于获取函数多余的参数,只能放在末尾
+        // arguments是获取所有实参,rest参数可以取代arguments
+        // rest是一个数组
+        
+        function fn(...rest) {
+            let sum = 0
+            rest.forEach(function(item){
+                // console.log(item);
+                sum += item
+            })
+            console.log(sum);
+        }
+        fn(1, 2, 3, 4, 5)
+    </script>
+</body>
+
+</html>
